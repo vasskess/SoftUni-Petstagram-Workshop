@@ -4,7 +4,7 @@
 <head>
     <link rel="stylesheet"
           href="/static/css/styles.css">
-    <link rel="icon" type="image/x-icon" href="/static/images/free-30-instagram-stories-icons23_122570.png">
+    <link rel="icon" type="image/x-icon" href="/images/free-30-instagram-stories-icons23_122570.png">
     <title>Petstagram</title>
 </head>
 <!-- End Head Section -->
@@ -19,7 +19,7 @@
             <div class="logo">
                 <!-- Link to Home Page -->
                 <a href="#">
-                    <img width="50px" src="/static/images/free-30-instagram-stories-icons23_122570.png" alt="img1">
+                    <img width="50px" src="/images/free-30-instagram-stories-icons23_122570.png" alt="img1">
                 </a>
 
                 <!-- Link to Home Page -->
@@ -31,23 +31,31 @@
             <div class="nav-links">
                 <ul class="nav-group">
                     <li class="nav-item">
+
                         <!-- Link to Add Pet Page -->
                         <a href="#">
                             <i>Add Pet</i>
                         </a>
                     </li>
-
                     <li class="nav-item">
+
                         <!-- Link to Add Photo Page -->
                         <a href="#">
                             <i>Add Photo</i>
                         </a>
                     </li>
-
                     <li class="nav-item">
-                        <!-- Link to Profile Page -->
+
+                        <!-- Link to Login Page -->
                         <a href="#">
-                            <i>Profile</i>
+                            <i>Login</i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+
+                        <!-- Link to Register Page -->
+                        <a href="">
+                            <i>Register</i>
                         </a>
                     </li>
                 </ul>
@@ -60,46 +68,34 @@
 <!-- Starts Main Section -->
 <main>
 
-    <!-- Starts Edit Photo Section -->
-    <div class="edit-delete edit-photo">
-        <h2>Edit photo</h2>
+    <!-- Start Register Section -->
+    <div class="login-register-div">
+        <div class="login-register-box">
+            <h1>Petstagram</h1>
 
-        <!-- Starts Edit Photo Form -->
-        <form action="">
-            <p>
-                <label for="id_photo_file">Photo file:</label>
-                <input type="file">
-            </p>
+            <!-- Start Register Form -->
+            <form action="">
+                <input type="text" placeholder="Username">
 
-            <p>
-                <label for="id_description">Description:</label>
-                <input type="text" value="Sasho is an Axolotl">
-            </p>
+                <input type="email" placeholder="Email">
 
-            <p>
-                <label for="id_description">Location:</label>
-                <input type="text" name="photo_shooting_location" maxlength="50" id="id_photo_shooting_location"
-                       value="Bansko, Bulgaria">
-            </p>
+                <input type="password" placeholder="Password">
 
-            <p>
-                <label for="pets">Tag Pets:</label>
+                <input type="password" placeholder="Repeat Password">
 
-                <select name="pets" id="id_tagged_pets" multiple>
-                    <option selected>Sasho</option>
-                    <option>Perry</option>
-                    <option>Bucky</option>
-                    <option>Steve</option>
-                </select>
-            </p>
+                <!-- Register Button -->
+                <button type="submit">Register</button>
+            </form>
+            <!-- End Register Form -->
 
-            <!-- Edit Photo Button -->
-            <button class="edit-btn" type="submit">Edit Photo</button>
-        </form>
-        <!-- End Edit Photo Form -->
+        </div>
+        <div class="second-option">
 
+            <!-- Link to Login Page -->
+            <p>Have an account? <a href="#">Log in</a></p>
+        </div>
     </div>
-    <!-- End Edit Photo Section -->
+    <!-- End Register Section -->
 
 </main>
 <!-- End Main Section -->
