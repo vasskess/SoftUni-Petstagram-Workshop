@@ -1,3 +1,13 @@
 from django.contrib import admin
 
-# Register your models here.
+from petstagram.common.models import *
+
+
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ("id",)
+
+
+@admin.register(Like)
+class LikeAdmin(admin.ModelAdmin):
+    list_display = ("id",)
