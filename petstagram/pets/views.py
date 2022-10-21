@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 
-from petstagram.pets.forms import PetForm
+from petstagram.pets.forms import PetForm, PetDeleteForm
 from petstagram.pets.models import Pet
 
 
@@ -38,4 +38,10 @@ def edit_pet(request, username, pet_name):
 
 
 def delete_pet(request, username, pet_name):
-    return render(request, template_name="pets/pet-delete-page.html")
+    pet = Pet.objects.get(slug=pet_name)
+    if request.method == "POST":
+        pet.delete()
+        return redirect("profile-details", pk=1)
+    form = PetDeleteForm(initial=pet.__dict__)
+    context = {"form": form}
+    return render(request, template_name="pets/pet-delete-page.html", context=context)
