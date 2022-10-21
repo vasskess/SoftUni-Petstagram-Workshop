@@ -31,3 +31,9 @@ def edit_photo(request, pk):
             return redirect("detail-photo", pk)
     context = {"form": form}
     return render(request, template_name="photos/photo-edit-page.html", context=context)
+
+
+def delete_photo(request, pk):
+    photo = Photo.objects.get(pk=pk)
+    photo.delete()
+    return redirect("home-page")
