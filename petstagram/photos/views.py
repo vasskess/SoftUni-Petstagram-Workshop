@@ -9,19 +9,15 @@ def add_photo(request):
     if form.is_valid():
         form.save()
         return redirect("home-page")
-    context = {"fomr": form}
+    context = {"form": form}
     return render(request, template_name="photos/photo-add-page.html", context=context)
 
 
 def detail_photo(request, pk):
-    context = {}
     photo = Photo.objects.get(pk=pk)
     likes = photo.like_set.all()
     comments = photo.comment_set.all()
-    context["photo"] = photo
-    context["likes"] = likes
-    context["comments"] = comments
-
+    context = {"photo": photo, "likes": likes, "comments": comments}
     return render(request, template_name="photos/photo-details-page.html", context=context)
 
 
