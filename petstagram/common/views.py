@@ -5,8 +5,6 @@ from petstagram.common.models import Like
 from petstagram.photos.models import Photo
 
 
-# Create your views here.
-
 def home_page(request):
     context = {}
     all_photos = Photo.objects.all()

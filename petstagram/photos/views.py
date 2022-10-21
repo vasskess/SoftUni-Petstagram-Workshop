@@ -18,7 +18,9 @@ def detail_photo(request, pk):
     likes = photo.like_set.all()
     comments = photo.comment_set.all()
     context = {"photo": photo, "likes": likes, "comments": comments}
-    return render(request, template_name="photos/photo-details-page.html", context=context)
+    return render(
+        request, template_name="photos/photo-details-page.html", context=context
+    )
 
 
 def edit_photo(request, pk):
