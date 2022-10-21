@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 
-from petstagram.photos.forms import PhotoCreateForm
+from petstagram.photos.forms import PhotoCreateForm, PhotoEditForm
 from petstagram.photos.models import Photo
 
 
@@ -22,4 +22,12 @@ def detail_photo(request, pk):
 
 
 def edit_photo(request, pk):
-    return render(request, template_name="photos/photo-edit-page.html")
+    photo = Photo.objects.get(pk=pk)
+    form = PhotoEditForm(instance=photo)
+    if request.method == "POST":
+        form = PhotoEditForm(request.POST, instance=photo)
+        if form.is_valid():
+            form.save()
+            return redirect("detail-photo", pk)
+    context = {"form": form}
+    return render(request, template_name="photos/photo-edit-page.html", context=context)
