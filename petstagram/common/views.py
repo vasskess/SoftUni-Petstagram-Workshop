@@ -8,8 +8,8 @@ from petstagram.photos.models import Photo
 
 def home_page(request):
     all_photos = Photo.objects.all()
-    comment = CommentForm()
-    context = {"all_photos": all_photos, "comment": comment}
+    comment_form = CommentForm()
+    context = {"all_photos": all_photos, "comment_form": comment_form}
     return render(request, template_name="common/home-page.html", context=context)
 
 

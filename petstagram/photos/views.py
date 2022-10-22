@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 
+from petstagram.common.forms import CommentForm
 from petstagram.photos.forms import PhotoCreateForm, PhotoEditForm
 from petstagram.photos.models import Photo
 
@@ -17,7 +18,8 @@ def detail_photo(request, pk):
     photo = Photo.objects.get(pk=pk)
     likes = photo.like_set.all()
     comments = photo.comment_set.all()
-    context = {"photo": photo, "likes": likes, "comments": comments}
+    comment_form = CommentForm()
+    context = {"photo": photo, "likes": likes, "comments": comments, "comment_form": comment_form}
     return render(
         request, template_name="photos/photo-details-page.html", context=context
     )
