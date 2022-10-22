@@ -29,13 +29,13 @@
         </div>
         <div class="pet-posts">
             {% if all_photos %}
-            <!-- Start if pet photos -->
-            {% include 'common/pets-posts.html' %}
-            <!-- End if pet photos -->
+                <!-- Start if pet photos -->
+                {% include 'common/pets-posts.html' %}
+                <!-- End if pet photos -->
             {% else %}
-            <!-- Start if not pet photos -->
-            <img class="no-posts" src="{% static "images/no_posts.png" %}" alt="no posts image">
-            <!-- End if not pet photos -->
+                <!-- Start if not pet photos -->
+                <img class="no-posts" src="{% static "images/no_posts.png" %}" alt="no posts image">
+                <!-- End if not pet photos -->
             {% endif %}
         </div>
     </div>

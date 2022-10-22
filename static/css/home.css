@@ -9,7 +9,7 @@
 
 body {
     font-family: -apple-system, system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu,
-        Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     background: #fafafa;
     min-height: 100vh;
 }
@@ -239,7 +239,7 @@ main .container {
     color: #4d4d4f;
     font-weight: 500;
     line-height: 1em;
-    white-space: nowrap; 
+    white-space: nowrap;
 }
 
 .col-9 .card .top .userDetails h3 span {
